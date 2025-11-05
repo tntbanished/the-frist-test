@@ -1,0 +1,206 @@
+/* 全局重設與字體 */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* 確保至少佔滿視窗高度 */
+}
+
+/* 側邊欄 */
+.sidebar {
+    width: 280px; /* 側邊欄寬度 */
+    padding: 30px 35px;
+    box-sizing: border-box;
+    position: fixed; /* 固定在左側 */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.name-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* 分割線 */
+.divider {
+    border: none;
+    border-top: 1px solid #707070;
+    margin: 15px 0;
+}
+
+/* 首頁欄位 */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 項目間距 */
+}
+
+.meun-text {
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.meun-text:hover {
+    color: #f00; /* 懸停時變為紅色 */
+}
+
+.meun-text.active {
+    color: #f00; /* 當前活動頁面連結為紅色 */
+    font-weight: bold;
+}
+
+
+
+
+/* 內容 css */
+
+.main-content {
+    margin-left: 300px; /* 讓內容區避開側邊欄 */
+    flex-grow: 1; /* 佔據剩餘空間 */
+    padding: 0;
+    
+    /* NEW: 確保 main-content 佔滿可用空間 */
+    min-height: 100vh;      
+    min-width: 100vh;  
+    /* 啟用 Flexbox 佈局 */
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: center;    /* 垂直置中 (關鍵) */
+}
+.content-section {
+    padding: 60px; /* 一般頁面的內邊距 */
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+/* 影片 */
+.video-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* 佔滿視窗高度 */
+    overflow: hidden;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+
+/* 覆蓋層 (包含文字) */
+.video-overlay {
+position: absolute; /* 關鍵: 絕對定位 */
+    top: 50%; /* 從頂部開始 50% */
+    left: 50%; /* 從左邊開始 50% */
+    transform: translate(-50%, -50%); /* 關鍵: 將自身往回移動 50% 來達到完美的居中 */
+    text-align: center;
+    z-index: 10; /* 確保文字在圖片之上 */
+    
+    /* 移除可能干擾疊加的背景色，讓文字直接在圖上 */
+    background-color: transparent;
+}
+
+/* 作品集中文 */
+.portfolio-title {
+    font-size: 2vw;
+    color: #fff; /* 白色文字 */
+    margin: 0 0 10px 0;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+}
+
+/* PORTFOLIO 小字 */
+.portfolio-text {
+    font-size: 2vw;
+    color: #fff; 
+    margin-top: 10px;
+    letter-spacing: 0.5em;
+}
+
+
+
+
+
+/* self css */
+
+
+/* 核心：控制內容的寬度和居中 */
+
+.selfsenter {
+    width: 100%; 
+    max-width: 1000px; 
+    
+    /* 移除所有 margin: auto，改用 padding */
+    padding: 50px 40px; 
+    
+    overflow-y: auto; /* 如果內容超過視窗高度，則允許滾動 */
+}
+
+/* 頂部個人信息區佈局 */
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+/* 圓形頭像樣式 */
+.headshot-container {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /* 圓形 */
+    overflow: hidden;
+    margin-right: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.headshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 確保圖片覆蓋容器 */
+}
+
+/* 姓名和聯繫方式 */
+.contact-info {
+    flex-grow: 1; /* 佔據剩餘空間 */
+}
+
+.name-en {
+    font-size: 2.5em;
+    color: #000;
+    margin: 0 0 5px 0;
+}
+
+.email-info {
+    font-size: 1.1em;
+    color: #555;
+    margin: 0;
+}
+
+/* 水平分隔線 (模擬圖片中的細線) */
+.full-width-divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 0 0 50px 0;
+}
+
+/* 底部兩欄佈局 */
+.info-blocks {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px; /* 增加兩欄間距 */
+}
+
+.work-history {
+    flex: 1; /* 讓兩欄平均分配寬度 */
+    min-width: 45%;
+}
+
+.block-title {
+    font-size: 1.2em;    
+    margin-top: 0;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+}
